@@ -73,13 +73,32 @@ nav {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 0.95rem;
     text-transform: capitalize;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--text-light);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .nav-menu a:hover {
-    color: var(--primary-color);
+    color: var(--text-dark);
+    transform: translateY(-1px);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
 }
 
 /* Mobile menu button */
